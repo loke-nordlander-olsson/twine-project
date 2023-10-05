@@ -9,332 +9,73 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Game_prototyping_template.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Game_prototyping_template" startnode="1" creator="Twine" creator-version="2.7.1" format="Harlowe" format-version="3.3.7" ifid="BD6F9383-7C63-4CC5-A251-A6AF725B6E84" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start passage" tags="" position="800,100" size="100,100">Introduction passage! 
-
-This passage is only supposed to be visited ONCE in this story.
-
-We use this introduction passage in case you want to create a title page or start music in your game (using Harlowe Audio Library). 
-
-If you have no use of a title page, you could skip this in your own story.
-
-[[Start the story]]
-
-(set: $colour to &quot;nil&quot;)
-(set: $tool to &quot;nil&quot;)
-(set: $way to &quot;nil&quot;)</tw-passagedata><tw-passagedata pid="2" name="Start the story" tags="" position="800,300" size="100,100">First choice. There have to be two alternatives.
-
-[[Right]]
-[[Left]]</tw-passagedata><tw-passagedata pid="3" name="Right" tags="" position="900,450" size="100,100">You went right. There should be two more options here. Let&#39;s say you&#39;re in an art gallery. Yes, that&#39;s good. Now, choose a colour.
-
-[[Yellow]]
-[[Green]]
-
-(set: $way to &quot;right&quot;)</tw-passagedata><tw-passagedata pid="4" name="Left" tags="" position="700,450" size="100,100">You went left. There should be two more options here. Let&#39;s say you&#39;re in an art gallery. Yes, that&#39;s good. Now, choose a colour.
-
-[[Red]]
-[[Blue]]
-
-(set: $way to &quot;left&quot;)</tw-passagedata><tw-passagedata pid="5" name="Red" tags="röd" position="550,598.3333333333334" size="100,100">So this is the passage before the first junction, where all the paths meet. Make it count (somehow)!
-
-[[Junction]]
-
-(set: $colour to &quot;red&quot;)
-(set: $co to (color: red))
-</tw-passagedata><tw-passagedata pid="6" name="Blue" tags="blå" position="700,600" size="100,100">So this is the passage before the first junction, where all the paths meet. Make it count (somehow)!
-
-[[Junction]]
-
-(set: $colour to &quot;blue&quot;)
-(set: $co to (color: blue))</tw-passagedata><tw-passagedata pid="7" name="Yellow" tags="gul" position="900,600" size="100,100">So this is the passage before the first junction, where all the paths meet. Make it count (somehow)!
-
-[[Junction]]
-
-(set: $colour to &quot;yellow&quot;)
-(set: $co to (color: yellow))</tw-passagedata><tw-passagedata pid="8" name="Green" tags="grön" position="1050,598.3333333333334" size="100,100">So this is the passage before the first junction, where all the paths meet. Make it count (somehow)!
-
-[[Junction]]
-
-(set: $colour to &quot;green&quot;)
-(set: $co to (color: green))</tw-passagedata><tw-passagedata pid="9" name="Junction" tags="" position="800,750" size="100,100">We&#39;ve come to the first junction. This passage should change depending on what choices you&#39;ve made this far. 
-
-The following text should be written in the colour you&#39;ve picked: 
-
-(link: &quot;Show&quot;)[$co[You went $way and picked the colour $colour.]
-
-
-From here, we&#39;ll move on to two more choices. Since you&#39;re in an art gallery, you might as well choose what you&#39;re doing.
-
-[[Painting pictures]]
-[[Nailing pictures to the wall]]]
-
-</tw-passagedata><tw-passagedata pid="10" name="Painting pictures" tags="" position="700,900" size="100,100">So, you&#39;re painting. You get a paint brush!
-
-[[Paint a picture-&gt;Junction_2]]
-
-(set: $tool to &quot;brush&quot;)</tw-passagedata><tw-passagedata pid="11" name="Nailing pictures to the wall" tags="" position="900,900" size="100,100">So, you&#39;re hammering away. You get a hammer!
-
-[[Hammer a nail-&gt;Junction_2]] 
-
-(set: $tool to &quot;hammer&quot;)</tw-passagedata><tw-passagedata pid="12" name="Junction_2" tags="" position="800,1100" size="100,100">Well, look how nice that turned out! Let&#39;s see what choices you&#39;ve made so far:
-
-(link: &quot;Show&quot;)[You have (if: $tool is &quot;brush&quot;)[**painted**](if: $tool is &quot;hammer&quot;)[**nailed**] a $co[$colour] picture on the wall to the **$way**. 
-
-Perfect! Now, we&#39;re reached the middle, so let us follow the pattern, mirroring the top half of the story.
-
-Look, a woman wants to buy the painting. She asks who the artist is. 
-
-[[Say it&#39;s you-&gt;Yours]]
-[[Say you don&#39;t know-&gt;Unknown]]]</tw-passagedata><tw-passagedata pid="13" name="Yours" tags="" position="698.3333333333334,1253.3333333333333" size="100,100">&lt;!-- (This is a comment and won&#39;t be generated in the game)
-
-If you&#39;ve actually painted the picture, this is the honest route. Good on you. If you haven&#39;t painted it, this is the dishonest one.
-
---&gt;Of course you&#39;re the artist! (if: $tool is &quot;hammer&quot;)[Just pray that the true artist doesn&#39;t come in through that door anytime soon...]
-
-She is very interested in buying the $colour painting. No, she is actually //insisting// on buying it. And you&#39;re the artist, right? So there shouldn&#39;t be a problem, //right//?
-
-[[Say it&#39;s definitely for sale-&gt;Sell_1]] 
-[[Say it&#39;s not for sale right now-&gt;No sell_1]] 
-
-(if: $tool is &quot;hammer&quot;)[(set: $honest to false)]
-(if: $tool is &quot;brush&quot;)[(set: $honest to true)]
-
-&lt;!-- 
-
-This honesty variable will determine what the ending will be.
- 
- --&gt;</tw-passagedata><tw-passagedata pid="14" name="Unknown" tags="" position="900,1250" size="100,100">&lt;!-- (This is a comment and won&#39;t be generated in the game)
-
-If you haven&#39;t painted it, this is the honest route. Good on you. If you did paint the picture, this is the dishonest one. 
-
---&gt;Oh no, that&#39;s not yours! (if: $tool is &quot;brush&quot;)[//You should learn to take pride in your work...//]
-
-She is very interested in buying the $colour painting. No, she is actually //insisting// on buying it. And you&#39;re an art dealer, right? They do get a cut of the profit, you know...
-
-[[Say it&#39;s definitely on sale-&gt;Sell_2]] 
-[[Say it&#39;s not on sale right now-&gt;No sell_2]] 
-
-(if: $tool is &quot;hammer&quot;)[(set: $honest to true)]
-(if: $tool is &quot;brush&quot;)[(set: $honest to false)]
-
-&lt;!-- 
-
-This honesty variable will determine what the ending will be.
- 
- --&gt;</tw-passagedata><tw-passagedata pid="15" name="Sell_1" tags="" position="550,1398.3333333333333" size="100,100">Of course your painting is for sale! (if: $tool is &quot;hammer&quot;)[Well... //the// painting.]&lt;!--
-
-Here, you will be able to make a choice in the text itself. It won&#39;t force you forwards in the game, but it will change some variables, which will affect the ending. This is another way of making the text interactive and interesting.
-
-Named hooks are used (|name&gt;[...]). The whole phrase &quot;Is it expensive or is it cheap?&quot; has been made into one hook, because once a choice has been made, we don&#39;t want the other choice to be available. The two choices have their own hooks within hook 0. 
-
-There are different ways of doing the same thing. This is just one solution.
-
---&gt;The woman lets you name a price. |0&gt;[Is it |1&gt;[expensive] or is it |2&gt;[cheap]?]&lt;!--
-
-Below, you can see an example of collapsed whitespace, together with the HTML tag &lt;b&gt; for break. Two has been used to create a blank line.
-
---&gt;{(click: ?1)[
-	(replace: ?0)[
-		Is it expensive or is it cheap?
-&lt;br&gt;
-&lt;br&gt;
-		Of course it&#39;s expensive! Can&#39;t you see the vibrant $colour? 
-		(if: $tool is &quot;hammer&quot;)[
-			What kind of hustler would you be if it wasn&#39;t expensive?]
-		(else:)[
-			What kind of artist would you be if it wasn&#39;t expensive?] 
-		Ten thousand pounds!
-&lt;br&gt;
-&lt;br&gt;
-		The woman hums, but she likes the painting.
-&lt;br&gt;
-&lt;br&gt;
-		(set: $love to (either: &quot;red&quot;, &quot;green&quot;, &quot;yellow&quot;, &quot;blue&quot;))
-		(if: $love is $colour)[
-			Correction, she //loves// the painting. She has been looking her whole life for such a beautiful $colour painting! She will gladly pay ten thousand pounds for it!]
-		(else:)[
-			(set: $bid to (random: 1, 2))
-			(if: $bid is 1)[
-				No, it&#39;s too expensive. If it were $love, she would have accepted it. Besides, it hangs to the $way. She doesn&#39;t really like that. Let&#39;s say one hundred pounds. Still a good deal for you.]
-			(if: $bid is 2)[
-				No, it&#39;s a bit too expensive. It hangs to the $way, which makes it look a bit... bland. She offers you one thousand pounds for it. Still a great deal for you.]] 
-&lt;br&gt;
-&lt;br&gt;
-			Well, you just [[sold-&gt;Junction_3]] a $colour painting!]
-		(set: $price to true)]}
-
-{(click: ?2)[
-	(replace: ?0)[
-		Is it expensive or is it cheap?
-&lt;br&gt;
-&lt;br&gt;
-		Well, it&#39;s not that expensive. It&#39;s just a $colour painting. 
-		(if: $tool is &quot;hammer&quot;)[
-			It isn&#39;t even yours...]
-		(else:)[
-			You haven&#39;t made that many paintings... wouldn&#39;t be fair.] 
-		10 quid. Easy. Lets you take the bus home.
-&lt;br&gt;
-&lt;br&gt;
-		The woman accepts right away. You should have aimed a bit higher...
-&lt;br&gt;
-&lt;br&gt;
-		Well, you just [[sold-&gt;Junction_3]] a $colour painting!]
-	(set: $price to false)]}
-
-
-(set: $sell to true)</tw-passagedata><tw-passagedata pid="16" name="No sell_1" tags="" position="700,1400" size="100,100">No, the painting is not for sale. (if: $tool is &quot;hammer&quot;)[It isn&#39;t even yours to begin with!](if: $tool is &quot;brush&quot;)[You might want to get a bit more famous before you sell. Who knows, one day it might be worth a fortune?]
-
-The woman really likes the painting and asks if it&#39;s //really// you who&#39;s painted it. 
-
-Well, the painting isn&#39;t going to be sold anyway, but this might be your last chance to either (link: &quot;tell the truth&quot;)[(set: $honest to true)(goto: &quot;Junction_3&quot;)] or (link: &quot;lie&quot;)[(set: $honest to false)(goto: &quot;Junction_3&quot;)].
-
-(set: $sell to false)
-
-&lt;!-- Above is an example of using (link:) together with (goto:) instead of double brackets when changing passages. This is a good way of changing variables when clicking forwards, in case something needs to be checked in the following passage. Notice that there is no arrow connecting the passages - the arrows only appear when using the double brackets. They are, however, still connected. --&gt;</tw-passagedata><tw-passagedata pid="17" name="Sell_2" tags="" position="900,1400" size="100,100">Of course the painting is for sale! (if: $tool is &quot;brush&quot;)[Well... //your// painting, but you&#39;re apparently not telling her that!]&lt;!--
-
-Here, you will be able to make a choice in the text itself. It won&#39;t force you forwards in the game, but it will change some variable, which will affect the ending. This is another way of making the text interactive and interesting.  
-
---&gt;
-
-The woman lets you name a price. |0&gt;[Is it |1&gt;[expensive] or is it |2&gt;[cheap]?]&lt;!--
-
-Below, you can see an example of collapsed whitespace, together with the HTML tag &lt;b&gt; for break. Two has been used to create a blank line.
-
---&gt;{(click: ?1)[
-	(replace: ?0)[
-		Is it expensive or is it cheap?
-&lt;br&gt;
-&lt;br&gt;
-		Of course it&#39;s expensive! Can&#39;t you see the vibrant $colour? 
-			(if: $tool is &quot;brush&quot;)[
-				What kind of artist would you be if it wasn&#39;t expensive?]
-			(else:)[
-				You could get a lot of cash from this deal!] 
-		Ten thousand pounds!
-&lt;br&gt;
-&lt;br&gt;
-		The woman hums, but she likes the painting.
-&lt;br&gt;
-&lt;br&gt;
-		(set: $love to (either: &quot;red&quot;, &quot;green&quot;, &quot;yellow&quot;, &quot;blue&quot;))
-		(if: $love is $colour)[
-			Correction, she //loves// the painting. She has been looking her whole life for such a beautiful $colour painting! She will gladly pay ten thousand pounds for it!]
-		(else:)[
-			(set: $bid to (random: 1, 2))
-			(if: $bid is 1)[
-				No, it&#39;s too expensive. If it were $love, she would have accepted it. Besides, it hangs to the $way. She doesn&#39;t really like that. Let&#39;s say one hundred pounds. Still a good deal for you.]
-			(if: $bid is 2)[
-				No, it&#39;s a bit too expensive. It hangs to the $way, which makes it look a bit... bland. She offers you one thousand pounds for it. Still a great deal for you.]]
-&lt;br&gt;
-&lt;br&gt;
-			Well, you just [[sold-&gt;Junction_3]] a $colour painting!]
-		(set: $price to true)]}
-
-{(click: ?2)[
-	(replace: ?0)[
-		Is it expensive or is it cheap?
-&lt;br&gt;
-&lt;br&gt;
-		Well, it&#39;s not that expensive. It&#39;s just a $colour painting. 
-		(if: $tool is &quot;brush&quot;)[
-			You don&#39;t take any pride in your work, do you?]
-		(else:)[
-			You have no idea. You don&#39;t know anything about paintings.]
-&lt;br&gt;
-&lt;br&gt;
-		The woman hums, but she likes it. Accepts.
-&lt;br&gt;
-&lt;br&gt;
-		Well, you just [[sold-&gt;Junction_3]] a $colour painting!]
-		(set: $price to false)]}
-
-
-(set: $sell to true)</tw-passagedata><tw-passagedata pid="18" name="No sell_2" tags="" position="1050,1400" size="100,100">No, the painting is not for sale, money be damned! (if: $tool is &quot;hammer&quot;)[It isn&#39;t even yours to begin with!](if: $tool is &quot;brush&quot;)[She doesn&#39;t even know it&#39;s yours!]
-
-The woman really likes the painting and asks if it&#39;s //really isn&#39;t// you who&#39;s painted it. 
-
-Well, the painting isn&#39;t going to be sold anyway but this might be your last chance to either (link: &quot;tell the truth&quot;)[(set: $honest to true)(goto: &quot;Junction_3&quot;)] or (link: &quot;lie&quot;)[(set: $honest to false)(goto: &quot;Junction_3&quot;)].
-
-(set: $sell to false)
-
-&lt;!-- Above is an example of using (link:) together with (goto:) instead of double brackets when changing passages. This is a good way of changing variables when clicking forwards, in case something needs to be checked in the following passage. Notice that there is no arrow connecting the passages - the arrows only appear when using the double brackets. However, they are still connected. --&gt;</tw-passagedata><tw-passagedata pid="19" name="Junction_3" tags="" position="800,1550" size="100,100">After a few more moments, the woman leaves the gallery. (if: $sell is true)[She seemed rather happy with her purchase.](else:)[She didn&#39;t seem very happy, but she might come again.]
-
-&lt;!--
-
-Below, you can see another example of collapsed whitespace. It&#39;s very useful when you have many different conditions to check. 
-
-Here, the (link:) macro is also used together with (goto:), making it easier to reuse the same link for different routs. Again, notice the missing arrows. It doesn&#39;t mean the passages aren&#39;t connected.
-
---&gt;{(link: &quot;Finally&quot;)[
-	(if: $tool is &quot;brush&quot; and $sell is true)[
-		(if: $price is true)[
-			(set: $ending to 1)
-			]
-		(else:)[
-			(set: $ending to 3)
-			]
-		(goto: &quot;Sell_ending&quot;)
-	]
-	(else-if: $tool is &quot;hammer&quot; and $sell is true)[
-		(if: $price is true)[
-			(set: $ending to 2)
-		]
-		(else:)[
-			(set: $ending to 4)
-		]
-		(goto: &quot;Sell_ending&quot;)
-	]
-	(else-if: $tool is &quot;brush&quot; and $sell is false)[
-		(set: $ending to 5)
-		(goto: &quot;No sell_ending&quot;)
-	]
-	(else-if: $tool is &quot;hammer&quot; and $sell is false)[
-		(set: $ending to 6)
-		(goto: &quot;No sell_ending&quot;)
-	]
-]}, right?
-
-&lt;!-- In this particular example, there is only one link leading to different endings, depending on the choices made. You could, however, do it anyway you&#39;d like. If you want to have five links, you could, as long as they only lead to one of the two end passages. 
-
-It is advised to keep the story short and contained - rather you make a short but polished story, than a massive one that hasn&#39;t been properly curated. --&gt;</tw-passagedata><tw-passagedata pid="20" name="Sell_ending" tags="" position="700,1700" size="100,100">&lt;!--
-
-You&#39;ve painted a picture, and sold it for a large about of money
-
---&gt;(if: $ending is 1)[(if: $love is $colour)[She really loved that painting... ten thousand pounds? Wow!](else:)[You sell the painting you&#39;ve done for (if: $bid is 1)[one hundred](if: $bid is 2)[one thousand] pounds.] You&#39;re a real artist! Well deserved! (if: $honest is false)[Too bad you&#39;ll only see a cut of that money, and you won&#39;t get that recognition... bummer.]]&lt;!--
-
-You haven&#39;t painted a picture, but you have sold it for a large amount of money
-
---&gt;(if: $ending is 2)[(if: $love is $colour)[She really loved that painting... and you sold it, for ten thousand pounds. Wow...](else:)[You sell a painting that isn&#39;t even yours, for (if: $bid is 1)[one hundred](if: $bid is 2)[one thousand] pounds.] You&#39;re a real hustler now. I hope you will give the money to the real artist! (if: $honest is true)[At least, you&#39;ve been honest saying it isn&#39;t //yours//.]]&lt;!--
-
-You&#39;ve painted a picture, but sold it very cheap
-
---&gt;(if: $ending is 3)[You sell your painting for the mere amount of 10 quid. You could have sold it for more, don&#39;t you think? (if: $honest is false)[Well, at least the woman don&#39;t know it&#39;s yours. She might think you&#39;re... an amateur!]]&lt;!--
-
-You didn&#39;t paint the picture, and sold it very cheap
-
---&gt;(if: $ending is 4)[You sell the painting for the mere amount of 10 quid, and it isn&#39;t even yours. Well, you might have just robbed someone of their future. (if: $honest is false)[You didn&#39;t even have the decency of saying that it wasn&#39;t your painting! Classy.]]
-</tw-passagedata><tw-passagedata pid="21" name="No sell_ending" tags="" position="900,1700" size="100,100">&lt;!--
-
-You&#39;ve made a painting, but didn&#39;t sell it
-
---&gt;(if: $ending is 5)[(if: $honest is true)[Well, the woman isn&#39;t very happy she didn&#39;t get to buy your painting, but you&#39;re happy either way. You might get a fortune for it some day!](if: $honest is false)[Well, the woman isn&#39;t very happy she didn&#39;t get to buy the painting, but you feel relieved. She doesn&#39;t even know it&#39;s yours.]]&lt;!--
-
-You didn&#39;t make a painting and you didn&#39;t sell it
-
---&gt;(if: $ending is 6)[(if: $honest is true)[Well, the woman isn&#39;t very happy she didn&#39;t get to buy the painting, but you know nothing of art and it wouldn&#39;t be fair to sell it! Good on you.](if: $honest is false)[Well, the woman isn&#39;t very happy she didn&#39;t get to buy the painting, and now she thinks that //you&#39;re// the artist! Well... I wonder how quickly word will get around. You better have a good excuse at hand.]]</tw-passagedata><tw-passagedata pid="22" name="0" tags="" position="2000,100" size="100,100">[[1]] You wake up :) - Job description</tw-passagedata><tw-passagedata pid="23" name="1" tags="" position="2000,300" size="100,100">[[2a]]
+<tw-storydata name="Game_prototyping_template" startnode="1" creator="Twine" creator-version="2.7.1" format="Harlowe" format-version="3.3.7" ifid="BD6F9383-7C63-4CC5-A251-A6AF725B6E84" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="0" tags="" position="2000,100" size="100,100">[[1]] You wake up :) - Job description</tw-passagedata><tw-passagedata pid="2" name="1" tags="" position="2000,300" size="100,100">[[2a]]
 [[2b]]
 
 You either choose to head up or stay in bed, you have work
-</tw-passagedata><tw-passagedata pid="24" name="2a" tags="" position="1900,450" size="100,100">[[3a]]
-[[3b]]</tw-passagedata><tw-passagedata pid="25" name="2b" tags="" position="2100,450" size="100,100">[[3c]]
+</tw-passagedata><tw-passagedata pid="3" name="2a" tags="" position="1900,450" size="100,100">What do you choose to do first?
+
+Shower and iron your shirt
+or
+Make breakfast and brush your teeth
+
+[[3a]]
+[[3b]]</tw-passagedata><tw-passagedata pid="4" name="2b" tags="" position="2100,450" size="100,100">[[3c]]
 [[3d]]
 
-Alarm goes of once more, you don&#39;t have time to make breakfast and get ready one has to go</tw-passagedata><tw-passagedata pid="26" name="3b" tags="" position="1900,600" size="100,100">[[4]]</tw-passagedata><tw-passagedata pid="27" name="3a" tags="" position="1750,600" size="100,100">[[4]]</tw-passagedata><tw-passagedata pid="28" name="3c" tags="" position="2100,600" size="100,100">[[4]]</tw-passagedata><tw-passagedata pid="29" name="3d" tags="" position="2250,600" size="100,100">[[4]]</tw-passagedata><tw-passagedata pid="30" name="4" tags="" position="2000,750" size="100,100">[[5a]]
-[[5b]]</tw-passagedata><tw-passagedata pid="31" name="5b" tags="" position="2100,900" size="100,100">[[6]]</tw-passagedata><tw-passagedata pid="32" name="5a" tags="" position="1900,900" size="100,100">[[6]]</tw-passagedata><tw-passagedata pid="33" name="6" tags="" position="2000,1100" size="100,100">[[7a]]
-[[7b]]</tw-passagedata><tw-passagedata pid="34" name="7a" tags="" position="1900,1250" size="100,100">[[8a]]
-[[8b]]</tw-passagedata><tw-passagedata pid="35" name="7b" tags="" position="2100,1250" size="100,100">[[8c]]
-[[8d]]</tw-passagedata><tw-passagedata pid="36" name="8a" tags="" position="1750,1400" size="100,100">[[9]]</tw-passagedata><tw-passagedata pid="37" name="8b" tags="" position="1900,1400" size="100,100">[[9]]</tw-passagedata><tw-passagedata pid="38" name="8c" tags="" position="2100,1400" size="100,100">[[9]]</tw-passagedata><tw-passagedata pid="39" name="8d" tags="" position="2250,1400" size="100,100">[[9]]</tw-passagedata><tw-passagedata pid="40" name="9" tags="" position="2000,1550" size="100,100">[[10a]]
-[[10b]]</tw-passagedata><tw-passagedata pid="41" name="10a" tags="" position="1900,1700" size="100,100"></tw-passagedata><tw-passagedata pid="42" name="10b" tags="" position="2100,1700" size="100,100"></tw-passagedata></tw-storydata>
+Alarm goes of once more, you don&#39;t have time to make breakfast and get ready or you go back to bed</tw-passagedata><tw-passagedata pid="5" name="3b" tags="" position="1900,600" size="100,100">Skill check
+
+You either gain +1 strength
+
+or you cut your finger while making toast
+
+[[4]]</tw-passagedata><tw-passagedata pid="6" name="3a" tags="" position="1750,600" size="100,100">Skill check
+
+You either gain +1 charisma
+or
+hurt yourself badly on the iron and the shower is scalding
+
+[[4]]</tw-passagedata><tw-passagedata pid="7" name="3c" tags="" position="2100,600" size="100,100">Skill check with negative modifier
+[[4]]</tw-passagedata><tw-passagedata pid="8" name="3d" tags="" position="2250,600" size="100,100">You sleep
+
+[[4]]</tw-passagedata><tw-passagedata pid="9" name="4" tags="" position="2000,750" size="100,100">What now?
+
+[[5a]]
+[[5b]]</tw-passagedata><tw-passagedata pid="10" name="5b" tags="" position="2100,900" size="100,100">You sleep
+
+[[6]]</tw-passagedata><tw-passagedata pid="11" name="5a" tags="" position="1900,900" size="100,100">Skill check
+
+The other option
+if 3a was chosen then this slide is 3b
+
+if 3b was chosen then this slide is 3a
+[[6]]</tw-passagedata><tw-passagedata pid="12" name="6" tags="" position="2000,1100" size="100,100">You have to get going
+
+[[7a]]
+[[7b]]</tw-passagedata><tw-passagedata pid="13" name="7a" tags="" position="1900,1250" size="100,100">Did you forget something?
+
+[[8a]]
+[[8b]]</tw-passagedata><tw-passagedata pid="14" name="7b" tags="" position="2100,1250" size="100,100">You sleep
+
+[[8c]]
+[[8d]]</tw-passagedata><tw-passagedata pid="15" name="8a" tags="" position="1750,1400" size="100,100">Skill check for yes
+
+If success oven was turned on
+
+if fail, then it wasn&#39;t important in the first place
+
+[[9]]</tw-passagedata><tw-passagedata pid="16" name="8b" tags="" position="1900,1400" size="100,100">No I didn&#39;t
+
+[[9]]</tw-passagedata><tw-passagedata pid="17" name="8c" tags="" position="2100,1400" size="100,100">Super negative modifier skill check
+
+You can still make it
+
+[[9]]</tw-passagedata><tw-passagedata pid="18" name="8d" tags="" position="2250,1400" size="100,100">You sleep
+
+[[9]]</tw-passagedata><tw-passagedata pid="19" name="9" tags="" position="2000,1550" size="100,100">Time to head out
+
+[[10a]]
+[[10b]]</tw-passagedata><tw-passagedata pid="20" name="10a" tags="" position="1900,1700" size="100,100"></tw-passagedata><tw-passagedata pid="21" name="10b" tags="" position="2100,1700" size="100,100"></tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
