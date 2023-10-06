@@ -9,19 +9,21 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Game_prototyping_template.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Game_prototyping_template" startnode="1" creator="Twine" creator-version="2.7.1" format="Harlowe" format-version="3.3.7" ifid="BD6F9383-7C63-4CC5-A251-A6AF725B6E84" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="0" tags="" position="2000,100" size="100,100">[[1]] You wake up :) - Job description</tw-passagedata><tw-passagedata pid="2" name="1" tags="" position="2000,300" size="100,100">[[2a]]
-[[2b]]
+<tw-storydata name="Game_prototyping_template" startnode="1" creator="Twine" creator-version="2.7.1" format="Harlowe" format-version="3.3.7" ifid="BD6F9383-7C63-4CC5-A251-A6AF725B6E84" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="0" tags="" position="2000,100" size="100,100">You wake up :) - Job description(set: $cont to &quot;Continue&quot;)(set: $contSlp to &quot;Continue sleeping&quot;)(set: $wkUp to &quot;Wake up&quot;)
 
-You either choose to head up or stay in bed, you have work
-</tw-passagedata><tw-passagedata pid="3" name="2a" tags="" position="1900,450" size="100,100">What do you choose to do first?
+[[$cont|1]]
+</tw-passagedata><tw-passagedata pid="2" name="1" tags="" position="2000,300" size="100,100">[[$wkUp|2a]]
+[[$contSlp|2b]]
+
+You either choose to head up or stay in bed, you have work</tw-passagedata><tw-passagedata pid="3" name="2a" tags="" position="1900,450" size="100,100">What do you choose to do first?
 
 Shower and iron your shirt
 or
 Make breakfast and brush your teeth
 
-[[3a]]
-[[3b]]</tw-passagedata><tw-passagedata pid="4" name="2b" tags="" position="2100,450" size="100,100">[[3c]]
-[[3d]]
+[[Shower and iron|3a]]
+[[Breakfast and brush teeth|3b]]</tw-passagedata><tw-passagedata pid="4" name="2b" tags="" position="2100,450" size="100,100">[[$wkUp|3c]]
+[[$contSlp|3d]]
 
 Alarm goes of once more, you don&#39;t have time to make breakfast and get ready or you go back to bed</tw-passagedata><tw-passagedata pid="5" name="3b" tags="" position="1900,600" size="100,100">Skill check
 
@@ -29,27 +31,27 @@ You either gain +1 strength
 
 or you cut your finger while making toast
 
-[[4]]</tw-passagedata><tw-passagedata pid="6" name="3a" tags="" position="1750,600" size="100,100">Skill check
+[[$cont|4]]</tw-passagedata><tw-passagedata pid="6" name="3a" tags="" position="1750,600" size="100,100">Skill check
 
 You either gain +1 charisma
 or
 hurt yourself badly on the iron and the shower is scalding
 
-[[4]]</tw-passagedata><tw-passagedata pid="7" name="3c" tags="" position="2100,600" size="100,100">Skill check with negative modifier
-[[4]]</tw-passagedata><tw-passagedata pid="8" name="3d" tags="" position="2250,600" size="100,100">You sleep
+[[$cont|4]]</tw-passagedata><tw-passagedata pid="7" name="3c" tags="" position="2100,600" size="100,100">Skill check with negative modifier
+[[$cont|4]]</tw-passagedata><tw-passagedata pid="8" name="3d" tags="" position="2250,600" size="100,100">You sleep
 
-[[4]]</tw-passagedata><tw-passagedata pid="9" name="4" tags="" position="2000,750" size="100,100">What now?
+[[$cont|4]]</tw-passagedata><tw-passagedata pid="9" name="4" tags="" position="2000,750" size="100,100">What now?
 
-[[5a]]
-[[5b]]</tw-passagedata><tw-passagedata pid="10" name="5b" tags="" position="2100,900" size="100,100">You sleep
+[[$wkUp|5a]]
+[[$contSlp|5b]]</tw-passagedata><tw-passagedata pid="10" name="5b" tags="" position="2100,900" size="100,100">You sleep
 
-[[6]]</tw-passagedata><tw-passagedata pid="11" name="5a" tags="" position="1900,900" size="100,100">Skill check
+[[$cont|6]]</tw-passagedata><tw-passagedata pid="11" name="5a" tags="" position="1900,900" size="100,100">Skill check
 
 The other option
 if 3a was chosen then this slide is 3b
 
 if 3b was chosen then this slide is 3a
-[[6]]</tw-passagedata><tw-passagedata pid="12" name="6" tags="" position="2000,1100" size="100,100">You have to get going
+[[$cont|6]]</tw-passagedata><tw-passagedata pid="12" name="6" tags="" position="2000,1100" size="100,100">You have to get going
 
 [[7a]]
 [[7b]]</tw-passagedata><tw-passagedata pid="13" name="7a" tags="" position="1900,1250" size="100,100">Did you forget something?
