@@ -9,7 +9,11 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Game_prototyping_template.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Game_prototyping_template" startnode="1" creator="Twine" creator-version="2.7.1" format="Harlowe" format-version="3.3.7" ifid="BD6F9383-7C63-4CC5-A251-A6AF725B6E84" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="0" tags="" position="2000,100" size="100,100">You wake up :) - Job description(set: $cont to &quot;Continue&quot;)(set: $contSlp to &quot;Continue sleeping&quot;)(set: $wkUp to &quot;Wake up&quot;)
+<tw-storydata name="Game_prototyping_template" startnode="1" creator="Twine" creator-version="2.7.1" format="Harlowe" format-version="3.3.7" ifid="BD6F9383-7C63-4CC5-A251-A6AF725B6E84" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="0" tags="" position="2000,100" size="100,100">You wake up. It&#39;s your first day at your very own job today. Good on ya champ! We&#39;re sorry we never belived in you and truth be told, we still rather not make a definitive statement on the subject. Anyways where are ya headed today?
+Choose a job! Yes it&#39;s that easy! No interview, no salary, nothing. Just a bog standard job that fits YOUR skills!
+- Food additive tester (endurance) 
+- Rejected tinder profile analyst (charisma) 
+- No discernable apptitude (You are completely useless! Where are you even heading?) (set: $cont to &quot;Continue&quot;)(set: $contSlp to &quot;Continue sleeping&quot;)(set: $wkUp to &quot;Wake up&quot;)
 
 [[$cont|1]]
 </tw-passagedata><tw-passagedata pid="2" name="1" tags="" position="2000,300" size="100,100">[[$wkUp|2a]]
@@ -56,15 +60,13 @@ if 3b was chosen then this slide is 3a
 [[7a]]
 [[7b]]</tw-passagedata><tw-passagedata pid="13" name="7a" tags="" position="1900,1250" size="100,100">Did you forget something?
 
+If player succeeded with all skill checks they&#39;ll notice the oven was on, if not, they won&#39;t notice anything
+
 [[8a]]
 [[8b]]</tw-passagedata><tw-passagedata pid="14" name="7b" tags="" position="2100,1250" size="100,100">You sleep
 
 [[8c]]
-[[8d]]</tw-passagedata><tw-passagedata pid="15" name="8a" tags="" position="1750,1400" size="100,100">Skill check for yes
-
-If success oven was turned on
-
-if fail, then it wasn&#39;t important in the first place
+[[8d]]</tw-passagedata><tw-passagedata pid="15" name="8a" tags="" position="1750,1400" size="100,100">The oven was on
 
 [[9]]</tw-passagedata><tw-passagedata pid="16" name="8b" tags="" position="1900,1400" size="100,100">No I didn&#39;t
 
@@ -77,7 +79,21 @@ You can still make it
 [[9]]</tw-passagedata><tw-passagedata pid="19" name="9" tags="" position="2000,1550" size="100,100">Time to head out
 
 [[10a]]
-[[10b]]</tw-passagedata><tw-passagedata pid="20" name="10a" tags="" position="1900,1700" size="100,100"></tw-passagedata><tw-passagedata pid="21" name="10b" tags="" position="2100,1700" size="100,100"></tw-passagedata></tw-storydata>
+[[10b]]
+[[10c]]
+[[10d]]
+[[10e]]
+[[10f]]</tw-passagedata><tw-passagedata pid="20" name="10a" tags="" position="1750,1700" size="100,100">Successful day
+
+-if player succeedes with all skill checks</tw-passagedata><tw-passagedata pid="21" name="10b" tags="" position="1850,1700" size="100,100">If players missed at least one skill check</tw-passagedata><tw-passagedata pid="22" name="10c" tags="" position="1950,1700" size="100,100">Not successful day
+
+If players failed multiple skill checks</tw-passagedata><tw-passagedata pid="23" name="10d" tags="" position="2050,1700" size="100,100">successful sleep
+
+if players slept once and got up </tw-passagedata><tw-passagedata pid="24" name="10e" tags="" position="2150,1700" size="100,100">Partial sleep
+
+if players slept a couple of times and got up</tw-passagedata><tw-passagedata pid="25" name="10f" tags="" position="2250,1700" size="100,100">Full sleep
+
+You slept through the day</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
