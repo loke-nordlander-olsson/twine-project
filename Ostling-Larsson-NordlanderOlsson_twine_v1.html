@@ -11,29 +11,40 @@
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Game_prototyping_template.</tw-noscript></noscript></tw-story>
 <tw-storydata name="Game_prototyping_template" startnode="1" creator="Twine" creator-version="2.7.1" format="Harlowe" format-version="3.3.7" ifid="BD6F9383-7C63-4CC5-A251-A6AF725B6E84" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="0" tags="" position="2000,100" size="100,100">You wake up. It&#39;s your first day at your very own job today. Good on ya champ! We&#39;re sorry we never belived in you and truth be told, we still rather not make a definitive statement on the subject. Anyways where are ya headed today?
 Choose a job! Yes it&#39;s that easy! No interview, no salary, nothing. Just a bog standard job that fits YOUR skills!
-- Food additive tester (endurance) 
-- Rejected tinder profile analyst (charisma) 
-- No discernable apptitude (You are completely useless! Where are you even heading?) (set: $cont to &quot;Continue&quot;)(set: $contSlp to &quot;Continue sleeping&quot;)(set: $wkUp to &quot;Wake up&quot;)
+- &#39;&#39;F&#39;&#39;ood &#39;&#39;A&#39;&#39;dditive &#39;&#39;T&#39;&#39;ester (endurance) 
+- &#39;&#39;R&#39;&#39;ejected &#39;&#39;T&#39;&#39;inder &#39;&#39;P&#39;&#39;rofile &#39;&#39;A&#39;&#39;nalyst (charisma) 
+- &#39;&#39;N&#39;&#39;o &#39;&#39;D&#39;&#39;iscernable &#39;&#39;A&#39;&#39;pptitude (You are completely useless! Where are you even heading?) 
+{&lt;!-- Variabler --&gt;
+(set: $cont to &quot;Continue&quot;)(set: $contSlp to &quot;Continue sleeping&quot;)(set: $wkUp to &quot;Wake up&quot;)(set: $successes to + 1)(set: $succheck to &quot;Skillcheck successful&quot;)(set:$rolled to &quot;Rolled: &quot; + &quot;$skillcheck&quot;)
+}
+(link: &quot;FAT&quot;)[(set: $job to 1)(set:$strength to 1)(goto: &quot;1&quot;)]
+(link: &quot;RTPA&quot;)[(set: $job to 2)(set:$charisma to 1)(goto: &quot;1&quot;)]
+(link: &quot;NDA&quot;)[(set: $job to 3)(goto: &quot;1&quot;)]
 
-[[$cont|1]]
-</tw-passagedata><tw-passagedata pid="2" name="1" tags="" position="2000,300" size="100,100">[[$wkUp|2a]]
-[[$contSlp|2b]]
+Kolla 3b för att se skillcheck</tw-passagedata><tw-passagedata pid="2" name="1" tags="" position="2000,300" size="100,100">You either choose to head up or stay in bed, you have work
 
-You either choose to head up or stay in bed, you have work</tw-passagedata><tw-passagedata pid="3" name="2a" tags="" position="1900,450" size="100,100">What do you choose to do first?
+[[$wkUp|2a]]
+[[$contSlp|2b]]</tw-passagedata><tw-passagedata pid="3" name="2a" tags="" position="1900,450" size="100,100">What do you choose to do first?
 
 Shower and iron your shirt
 or
 Make breakfast and brush your teeth
 
 [[Shower and iron|3a]]
-[[Breakfast and brush teeth|3b]]</tw-passagedata><tw-passagedata pid="4" name="2b" tags="" position="2100,450" size="100,100">[[$wkUp|3c]]
-[[$contSlp|3d]]
+[[Breakfast and brush teeth|3b]]</tw-passagedata><tw-passagedata pid="4" name="2b" tags="" position="2100,450" size="100,100">Alarm goes of once more, you don&#39;t have time to make breakfast and get ready or you go back to bed
 
-Alarm goes of once more, you don&#39;t have time to make breakfast and get ready or you go back to bed</tw-passagedata><tw-passagedata pid="5" name="3b" tags="" position="1900,600" size="100,100">Skill check
+[[$wkUp|3c]]
+[[$contSlp|3d]]</tw-passagedata><tw-passagedata pid="5" name="3b" tags="" position="1900,600" size="100,100">Skill check
 
-You either gain +1 strength
+You either gain +1 endurance
 
 or you cut your finger while making toast
+{&lt;!-- Ser om det är jobb nummer ett och gör en skillcheck, har man jobbet så har man högre marginal att lyckas 75%--&gt;
+(if: $job is 1)[(set: $skillcheck to(random:1, 4))]
+&lt;!-- Om jobbet inte är specifikt så tar den det här, man har lägre marginal att lyckas 50% --&gt;
+(else:)[(set: $skillcheck to (random:1, 2))]}
+$rolled
+(if: $skillcheck &gt;= 2)[$succheck](hidden:)[$successes]
 
 [[$cont|4]]</tw-passagedata><tw-passagedata pid="6" name="3a" tags="" position="1750,600" size="100,100">Skill check
 
