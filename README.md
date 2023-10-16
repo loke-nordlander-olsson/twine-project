@@ -15,7 +15,7 @@ It is up to you what level of complexity you want your game to have, what your g
 - A minimum of two variables that in some way alter the story
 - A minimum of two different endings
 
-To-do:
+# To-do:
 - Fix skillchecks, add more information and popups. Maybe increase the margin.
 - Finish the text.
 - Finish the endings, divide them up in two equal slides(?).
