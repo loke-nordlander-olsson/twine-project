@@ -162,6 +162,8 @@ You can still make it
 [[10e]]
 [[10f]]</tw-passagedata><tw-passagedata pid="39" name="0" tags="" position="2000,100" size="100,100">Very WIP. There is only one functioning skill check at the moment that is &quot;unused&quot;.
 
+6:30 am
+
 You wake up. It&#39;s your first day at your very own job today. Good on ya champ! We&#39;re sorry we never belived in you and truth be told, we still rather not make a definitive statement on the subject. Anyways where are ya headed today?
 Choose a job! Yes it&#39;s that easy! No interview, no salary, nothing. Just a bog standard job that fits YOUR skills!
 |1&gt;[- &#39;&#39;F&#39;&#39;ood &#39;&#39;A&#39;&#39;dditive &#39;&#39;T&#39;&#39;ester (Endurance)]
@@ -185,24 +187,70 @@ Choose a job! Yes it&#39;s that easy! No interview, no salary, nothing. Just a b
 
 
 
-</tw-passagedata><tw-passagedata pid="40" name="1" tags="" position="2000,300" size="100,100">You either choose to head up or stay in bed, you have work
+</tw-passagedata><tw-passagedata pid="40" name="1" tags="" position="2000,300" size="100,100">6:35 am
 
-[[$wkUp|2a]]
-[[$contSlp|2b]]</tw-passagedata><tw-passagedata pid="41" name="2a" tags="" position="1900,450" size="100,100">What do you choose to do first?
+&quot;Hello? You&#39;re laying there, motionless. Are you alright? Do you want me to get you something? Actually I can&#39;t do that. I am a dissembodied voice, not your maid.&quot;
 
-Shower and iron your shirt
-or
-Make breakfast and brush your teeth
+The voice waves its, nothing, in front of your face. You don&#39;t respond because you can&#39;t interact with nothing.
 
+&quot;Clearly you struggle with this whole... life... business so I&#39;ll make it easy for ya. Not even a dumdum like you can refute this method, disliked by 9 out of 10 therapists. But that tenth one really enjoyed it, I tell ya. Here&#39;s two choices, what will you do?&quot; 
+
+[[$wkUp|2a]]   &lt;------- I recommend this one. You don&#39;t wanna have a tough time getting ready for work, right?
+[[$contSlp|2b]] (INSTEAD OF SLEEP THIS SHOULD SAY &quot;SAY PRESS SNOOZE&quot;)</tw-passagedata><tw-passagedata pid="41" name="2a" tags="" position="1900,450" size="100,100">7:00
+
+&quot;Great going there pal! You are a real champ att choosing a 50/50 choice. Wait till the people at work get a look at your decision making skills, they will definetly show one of the emotions. Now that you&#39;re up, there&#39;s something we&#39;ve gotta contend with. &quot;
+
+IF CHOICE 3a, DISPLAY THIS TEXT
+You&#39;re not going out... wearing... that are you!? This will not do. As a professional you&#39;ve got to set some standards for yourself. Now luckily I&#39;ve got tiktok and the people on there seem to know their shit.
+
+Here&#39;s what you are gonna wanna wear:
+Step 1. A fun button down
+Step 2. An appropriate pair of shorts
+Step 3. A sophisticated blazer
+Step 4. Belt the blazer to exentuate your waist (I mean honey, look at you!)
+Step 5. Sneakers, super cute.
+Step 6. As for hair, do a high ponytail to highlight your face.
+Step 7. Don&#39;t forget your mask (This game takes place in 2020, okay?)
+Step 8. You&#39;re work-bag. Everyone has one!
+Step 9. Sunglasses or reading glasses. Whichever will cover those horrid eyes of yours.
 [[Shower and iron|3a]]
+
+or
+
+IF CHOICE 3b, DISPLAY THIS TEXT
+The voice sniffs
+
+&quot;Awwww your breath reeks! You need to eat some food and get a brushin&#39; mate. I&#39;m not paid enough to put up with this childish-ness. Whatever could you have had that would make you so repulsive.&quot;
+
+You look over at your bedside table, a bottle of Nyquil stands side by side with a bottle of rat poison. Both radioactively green. 
+
+&quot;You know what? Nevermind&quot;
 [[Breakfast and brush teeth|3b]]</tw-passagedata><tw-passagedata pid="42" name="2b" tags="" position="2100,450" size="100,100">Alarm goes of once more, you don&#39;t have time to make breakfast and get ready or you go back to bed
 (set: $timesSlept to it +1)
 [[$wkUp|3c]]
-[[$contSlp|3d]]</tw-passagedata><tw-passagedata pid="43" name="3b" tags="" position="1900,600" size="100,100">Skill check
+[[$contSlp|3d]]</tw-passagedata><tw-passagedata pid="43" name="3b" tags="" position="1900,600" size="100,100">SKILL CHECK
 
-You either gain +1 endurance
+SUCCESS:
+The pantry is stocked full with whatever food items you could ever want while making a sandwich. A note is plastered to the side of the shelf.
 
-or you cut your finger while making toast
+&quot;Did some shopping for you sweetie - mom&quot;
+
+She&#39;s so sweet. As you cut the sandwich, perfectly symmetrical slices emerge from the loaf. You assemble the condiments with precision equal to that of a sportscar. When you bite down, all your worries float away. Each chew is bliss. Worried about ridding your mouth of this sensation, you walk slowly to the bathroom. You grip the toothbrush gently and as you begin brushing, your worries disappear. The sensation of your clean teeth made it all worth it. 
+
+Your hygene is in top form! How come you aren&#39;t a chef?
++1 Endurance
+
+FAIL:
+The pantry door creaks open. There&#39;s barely anything in there... A note is stuck on top of a moldy piece of cake.
+
+&quot;Thanks for the food -The theif&quot;
+
+Ah shoot! Seems like an exceedingly polite thief had entered your apartment and stole your groceries whilst you were sleeping. What are the odds of that happening!? Anyways, you manage to scrounge togeter one really thick piece of toast. You ready yourself to cut the bread whilst holding it in your hand because the thief also stole the cutting board. The knife slashes through the bready with ease, and with equal ease, your palm. The bread falls to the ground as blood starts to seep from the gash. You rush into the bathroom to clean the wound. With a slightly red stained bandage around your palm, you begin brushing your teeth. Holding the toothbrush should not hurt this much.
+
+You at least tried to be kind to your body...
+-1 Endurance
+
+
 {&lt;!-- Ser om det är jobb nummer ett och gör en skillcheck, har man jobbet så har man högre marginal att lyckas 75%--&gt;
 (if: $job is 1)[(set: $skillcheck to(random:1, 4))]
 &lt;!-- Om jobbet inte är specifikt så tar den det här, man har lägre marginal att lyckas 50% --&gt;
@@ -210,11 +258,23 @@ or you cut your finger while making toast
 $rolled
 (if: $skillcheck &gt;= 2)[$succheck](hidden:)[$successes]
 
-[[$cont|4]]</tw-passagedata><tw-passagedata pid="44" name="3a" tags="" position="1750,600" size="100,100">Skill check
+[[$cont|4]]</tw-passagedata><tw-passagedata pid="44" name="3a" tags="" position="1750,600" size="100,100">SKILL CHECK
 
-You either gain +1 charisma
-or
-hurt yourself badly on the iron and the shower is scalding
+SUCCESS:
+
+The shower is pleasantly mild. The landlord must&#39;ve finally recieved your thirtieth complaint letter. As you iron the shirt, the creases slowly fade. You are a natural. You slide out in front of the mirror, the world is yours. The reflection even agrees with you. You hit yourself with &quot;the look&quot;. You are irresistable. As the bathrom fog fades, you are greeted with the real you. You look alright, but hey that&#39;s better than before.
+
+You feel the voice wink at you. How did they do that?
++1 Charisma
+
+OR
+
+FAIL:
+
+As you turn the shower knob, you realize that something is different. The landlord has had your shower replaced thanks to your thirty complaint letters. This is one of those fancy hotel showers which ties heating to pressure. As you realize your mistake, the water lashes out angrily burning your entire being. You are now scalding red. As you proceed to iron your shirt, a burnt smell starts to eminate from bellow your nose. Your button down now has a rather large hole in it with a black, sooted outline. Breezy! 
+
+You feel confused as to what is standing in front of you. The voice is stunned. What have you done?
+-1 Charisma
 
 (if: $job is 2)[(set: $skillcheck to(random:1, 4))]
 &lt;!-- Om jobbet inte är specifikt så tar den det här, man har lägre marginal att lyckas 50% --&gt;
@@ -225,23 +285,108 @@ $rolled
 [[$cont|4]]</tw-passagedata><tw-passagedata pid="45" name="3c" tags="" position="2100,600" size="100,100">Skill check with negative modifier
 [[$cont|4]]</tw-passagedata><tw-passagedata pid="46" name="3d" tags="" position="2250,600" size="100,100">You sleep
 (set: $timesSlept to it +1)
-[[$cont|4]]</tw-passagedata><tw-passagedata pid="47" name="4" tags="" position="2000,750" size="100,100">What now?
+[[$cont|4]]</tw-passagedata><tw-passagedata pid="47" name="4" tags="" position="2000,750" size="100,100">THE VOICE REACTS TO THE RESULT
+
+3a SUCCESS:
+I wish my kids could be as good looking as you! See there&#39;s this one Marvin and... Oh nevermind you have to eat something if you&#39;re going to make it! Wait why are you looking at that bed? To think I was actually starting to think you could make it. C&#39;mon! 
+
+-You are style
+
+3a FAIL:
+Ummm... Yikes. That was quite the spectacle. Hey at least your outside is cleaned. And you could definetly be called hot... Just by a thermometer rather than by a person. Y&#39;know I wouldn&#39;t blame ya if you want to go back to bed. Is something I would say if you didn&#39;t have to go to work dipstick. Get moving! 
+
+-You are burn
+
+3b SUCCESS:
+That was... Beautiful! You should pack me some lunch while you&#39;re at it. And that rancid breath? Gone-zo! What&#39;s that? No! Don&#39;t look at the bed! 
+
+-You are hygene.
+
+3b FAIL:
+Well, y&#39;know at least you&#39;re still alive. But should that bandage really be wet? Right friend? Hey! Don&#39;t you faint on me now! You&#39;ve only got one more thing to do! Maybe you can cover up that bandage while getting dressed?
+
+-You are blood
+
+3c SUCCESS
+
+3c FAIL
+
+3d CHOICE
+
 
 [[$wkUp|5a]] &lt;!--Mr. Freeman--&gt;
 [[$contSlp|5b]]</tw-passagedata><tw-passagedata pid="48" name="5b" tags="" position="2100,900" size="100,100">You sleep
 (set: $timesSlept to it +1)
-[[$cont|6]]</tw-passagedata><tw-passagedata pid="49" name="5a" tags="" position="1900,900" size="100,100">Skill check
+[[$cont|6]]</tw-passagedata><tw-passagedata pid="49" name="5a" tags="" position="1900,900" size="100,100">SKILL CHECK
 
-The other option
-if 3a was chosen then this slide is 3b
+THE OTHER OPTION 
+**IF 3a WAS CHOSEN THEN SHOW SLIDE 3b**
 
-if 3b was chosen then this slide is 3a
-[[$cont|6]]</tw-passagedata><tw-passagedata pid="50" name="6" tags="" position="2000,1100" size="100,100">You have to get going
+SUCCESS:
+The pantry is stocked full with whatever food items you could ever want while making a sandwich. A note is plastered to the side of the shelf.
 
-[[$wkUp|7a]]
-[[$contSlp|7b]]</tw-passagedata><tw-passagedata pid="51" name="7a" tags="" position="1900,1250" size="100,100">Did you forget something?
+&quot;Did some shopping for you sweetie - mom&quot;
 
-If player succeeded with all skill checks they&#39;ll notice the oven was on, if not, they won&#39;t notice anything
+She&#39;s so sweet. As you cut the sandwich, perfectly symmetrical slices emerge from the loaf. You assemble the condiments with precision equal to that of a sportscar. When you bite down, all your worries float away. Each chew is bliss. Worried about ridding your mouth of this sensation, you walk slowly to the bathroom. You grip the toothbrush gently and as you begin brushing, your worries disappear. The sensation of your clean teeth made it all worth it. 
+
+Your hygene is in top form! How come you aren&#39;t a chef?
++1 Endurance
+
+FAIL:
+The pantry door creaks open. There&#39;s barely anything in there... A note is stuck on top of a moldy piece of cake.
+
+&quot;Thanks for the food -The theif&quot;
+
+Ah shoot! Seems like an exceedingly polite thief had entered your apartment and stole your groceries whilst you were sleeping. What are the odds of that happening!? Anyways, you manage to scrounge togeter one really thick piece of toast. You ready yourself to cut the bread whilst holding it in your hand because the thief also stole the cutting board. The knife slashes through the bready with ease, and with equal ease, your palm. The bread falls to the ground as blood starts to seep from the gash. You rush into the bathroom to clean the wound. With a slightly red stained bandage around your palm, you begin brushing your teeth. Holding the toothbrush should not hurt this much.
+
+You at least tried to be kind to your body...
+-1 Endurance
+
+
+**IF 3b WAS CHOSEN SHOW SLIDE 3a:**
+
+SUCCESS:
+
+The shower is pleasantly mild. The landlord must&#39;ve finally recieved your thirtieth complaint letter. As you iron the shirt, the creases slowly fade. You are a natural. You slide out in front of the mirror, the world is yours. The reflection even agrees with you. You hit yourself with &quot;the look&quot;. You are irresistable. As the bathrom fog fades, you are greeted with the real you. You look alright, but hey that&#39;s better than before.
+
+You feel the voice wink at you. How did they do that?
++1 Charisma
+
+OR
+
+FAIL:
+
+As you turn the shower knob, you realize that something is different. The landlord has had your shower replaced thanks to your thirty complaint letters. This is one of those fancy hotel showers which ties heating to pressure. As you realize your mistake, the water lashes out angrily burning your entire being. You are now scalding red. As you proceed to iron your shirt, a burnt smell starts to eminate from bellow your nose. Your button down now has a rather large hole in it with a black, sooted outline. Breezy! 
+
+You feel confused as to what is standing in front of you. The voice is stunned. What have you done?
+-1 Charisma
+
+[[$cont|6]]</tw-passagedata><tw-passagedata pid="50" name="6" tags="" position="2000,1100" size="100,100">3a SUCCESS WITH 3b SUCCESS
+WOW!
+
+The voice is struggling to speak. Is it sniveling?
+
+I&#39;m so proud of what you achieved. Being a human is difficult but you aced it! The jury is still out on if you&#39;ll make it though! What will you do?
+
+3a SUCCESS WITH 3b FAIL
+Welp, you can&#39;t blame you for trying. You look good at the very least, despite that injury of course. Is it still hurting? Ah no matter obsessing over the past. You should get a move on, towards the front door nontheless.
+
+3a FAIL WITH 3b SUCCESS
+Welp, you can&#39;t blame you for trying. You&#39;re at least feeling ready, I hope. You&#39;re appearance could use some work but you know what they say: &quot;Rome wasn&#39;t built in a day but how long did it take to fall down?&quot; um... Scrap that last part. Enough dilly dallying you have a job to get to!
+
+3a FAIL WITH 3b FAIL
+
+WIP MONOLOGUE
+
+5b SLEEP
+
+WIP MONOLOGUE
+
+
+[[$wkUp|7a]] (SHOULD JUST BE CALLED HEAD OUT)
+[[$contSlp|7b]] (SHOULD BE CALLED SOMETHING LIKE &quot;NAH I WANNA GO BACK TO BED&quot;)</tw-passagedata><tw-passagedata pid="51" name="7a" tags="" position="1900,1250" size="100,100">Woah woah woah! Hold it cowboy. Let&#39;s just get another look before you go. You did hastily run through todays routines. Maybe it&#39;s worth seeing if you forgot something. Y&#39;know retrace your steps. Did something slip your mind?
+
+YES ONLY WORKS IF ALL SKILLCHECKS HAVE SUCCEEDED
 
 [[Yes|8a]]
 [[No|8b]]</tw-passagedata><tw-passagedata pid="52" name="7b" tags="" position="2100,1250" size="100,100">You sleep
@@ -264,16 +409,16 @@ You can still make it
 (hidden:)[[Ending 3|10c]]
 (hidden:)[[Ending 4|10d]]
 (hidden:)[[Ending 5|10e]]}
-(if: $timesSlept &gt;= 5)[(go-to:&quot;10f&quot;)]</tw-passagedata><tw-passagedata pid="58" name="10a" tags="" position="1725,1700" size="100,100">Successful day
+(if: $timesSlept &gt;= 5)[(go-to:&quot;10f&quot;)]</tw-passagedata><tw-passagedata pid="58" name="10a" tags="" position="1775,1750" size="100,100">Successful day
 
 (Later it will have skillchecks)
-&lt;!---if player succeeds with all skill checks--&gt;</tw-passagedata><tw-passagedata pid="59" name="10b" tags="" position="1875,1950" size="100,100">If players missed at least one skill check</tw-passagedata><tw-passagedata pid="60" name="10c" tags="" position="2000,1950" size="100,100">Not successful day
+&lt;!---if player succeeds with all skill checks--&gt;</tw-passagedata><tw-passagedata pid="59" name="10b" tags="" position="1775,1850" size="100,100">If players missed at least one skill check</tw-passagedata><tw-passagedata pid="60" name="10c" tags="" position="1775,1950" size="100,100">Not successful day
 
-If players failed multiple skill checks</tw-passagedata><tw-passagedata pid="61" name="10d" tags="" position="2125,1950" size="100,100">successful sleep
+If players failed multiple skill checks</tw-passagedata><tw-passagedata pid="61" name="10d" tags="" position="2150,1850" size="100,100">successful sleep
 
-if players slept once and got up </tw-passagedata><tw-passagedata pid="62" name="10e" tags="" position="2250,1950" size="100,100">Partial sleep
+if players slept once and got up </tw-passagedata><tw-passagedata pid="62" name="10e" tags="" position="2150,1950" size="100,100">Partial sleep
 
-if players slept a couple of times and got up</tw-passagedata><tw-passagedata pid="63" name="10f" tags="" position="2375,1700" size="100,100">Full sleep
+if players slept a couple of times and got up</tw-passagedata><tw-passagedata pid="63" name="10f" tags="" position="2150,1750" size="100,100">Full sleep
 
 You slept through the day
 
