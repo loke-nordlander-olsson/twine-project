@@ -78,7 +78,7 @@ You can still make it
 
 [[9]]</tw-passagedata><tw-passagedata pid="18" name="8d" tags="" position="2250,1400" size="100,100">You sleep
 
-[[9]]</tw-passagedata><tw-passagedata pid="19" name="9" tags="" position="2000,1550" size="100,100">Time to head out
+[[9]]</tw-passagedata><tw-passagedata pid="19" name="9" tags="" position="1525,1600" size="100,100">Time to head out
 
 [[10a]]
 [[10b]]</tw-passagedata><tw-passagedata pid="20" name="0" tags="" position="2000,100" size="100,100">You wake up. It&#39;s your first day at your very own job today. Good on ya champ! We&#39;re sorry we never belived in you and truth be told, we still rather not make a definitive statement on the subject. Anyways where are ya headed today?
@@ -153,7 +153,7 @@ You can still make it
 
 [[9]]</tw-passagedata><tw-passagedata pid="37" name="8d" tags="" position="2250,1400" size="100,100">You sleep
 
-[[9]]</tw-passagedata><tw-passagedata pid="38" name="9" tags="" position="2000,1550" size="100,100">Time to head out
+[[9]]</tw-passagedata><tw-passagedata pid="38" name="9" tags="" position="2500,1825" size="100,100">Time to head out
 
 [[10a]]
 [[10b]]
@@ -225,10 +225,19 @@ The voice sniffs
 You look over at your bedside table, a bottle of Nyquil stands side by side with a bottle of rat poison. Both radioactively green. 
 
 &quot;You know what? Nevermind&quot;
-[[Breakfast and brush teeth|3b]]</tw-passagedata><tw-passagedata pid="42" name="2b" tags="" position="2100,450" size="100,100">Alarm goes of once more, you don&#39;t have time to make breakfast and get ready or you go back to bed
+[[Breakfast and brush teeth|3b]]</tw-passagedata><tw-passagedata pid="42" name="2b" tags="" position="2100,450" size="100,100">7:00
+
+//RING RING//
+
+The alarm goes off once more. You really should be thinking about getting up! You&#39;re missing valuable time to do... uh... well you &#39;&#39;were&#39;&#39; going to be given two choices of human activities but that offer is out of the window! Holy cow, you&#39;re late now! What are you waiting for?
+
+...
+
+Wait a second I do not condone the sleep option! Who in the bloody hell put that there!?
+
 (set: $timesSlept to it +1)
-[[$wkUp|3c]]
-[[$contSlp|3d]]</tw-passagedata><tw-passagedata pid="43" name="3b" tags="" position="1900,600" size="100,100">SKILL CHECK
+[[$wkUp|3c]] THIS SHOULD BE &quot;SHUFFLE TO GET READY&quot;
+[[$contSlp|3d]] THIS SHOULD BE &quot;NAP FOR A LITTLE BIT&quot;</tw-passagedata><tw-passagedata pid="43" name="3b" tags="" position="1900,600" size="100,100">SKILL CHECK
 
 SUCCESS:
 The pantry is stocked full with whatever food items you could ever want while making a sandwich. A note is plastered to the side of the shelf.
@@ -262,7 +271,7 @@ $rolled
 
 SUCCESS:
 
-The shower is pleasantly mild. The landlord must&#39;ve finally recieved your thirtieth complaint letter. As you iron the shirt, the creases slowly fade. You are a natural. You slide out in front of the mirror, the world is yours. The reflection even agrees with you. You hit yourself with &quot;the look&quot;. You are irresistable. As the bathrom fog fades, you are greeted with the real you. You look alright, but hey that&#39;s better than before.
+The shower is pleasantly mild. The landlord must&#39;ve finally recieved your thirtieth complaint letter. As you iron the shirt, the creases slowly fade. You are a natural. You slide out in front of the mirror, the world is yours. The reflection even agrees with you. You hit yourself with &quot;the look&quot;. You are irresistable. As the bathrom fog fades, you are greeted with &quot;the real you&quot;. You look alright. But hey! That&#39;s better than before.
 
 You feel the voice wink at you. How did they do that?
 +1 Charisma
@@ -282,8 +291,18 @@ You feel confused as to what is standing in front of you. The voice is stunned. 
 $rolled
 (if: $skillcheck &gt;= 2)[$succheck](hidden:)[$successes]
 
-[[$cont|4]]</tw-passagedata><tw-passagedata pid="45" name="3c" tags="" position="2100,600" size="100,100">Skill check with negative modifier
-[[$cont|4]]</tw-passagedata><tw-passagedata pid="46" name="3d" tags="" position="2250,600" size="100,100">You sleep
+[[$cont|4]]</tw-passagedata><tw-passagedata pid="45" name="3c" tags="" position="2100,600" size="100,100">SKILL CHECK WITH NEGATIVE MODIFIER (THIS ONE WILL BE HARD TO WIN)
+
+SKILL CHECK SUCCESS: 
+You throw the blanket off to the side, spring up from the bed and rush towards the bathroom. As you turn the shower knobs, cold water starts to trickle out from the shower head. You valiantly push through the sensation. Meanwhile you&#39;ve got one hand outside of the shower gripping the iron. On a very low setting, you proceed to blindly press the shirt. What&#39;s the worst thing that could happen?
+
+You step out from the shower and into your work outfit. You&#39;ve done it! Despite the odds, you&#39;ve fully dried instantly and are now looking presentable. You take a brief but important moment to get comfortable. You orient yourself out of the bathroom.
++1 Charisma
+
+SKILL CHECK FAIL:
+You throw the blanket off to the side, spring up from the bed and rush towards the bathroom. In your desperate sprint, you forgot to account for the fact that the bathroom door might be closed and promptly hit it at mach 10 speed. Fuck. You fall unconcious.
+
+[[$cont|4]]</tw-passagedata><tw-passagedata pid="46" name="3d" tags="" position="2250,600" size="100,100">Are you proud of yourself?
 (set: $timesSlept to it +1)
 [[$cont|4]]</tw-passagedata><tw-passagedata pid="47" name="4" tags="" position="2000,750" size="100,100">THE VOICE REACTS TO THE RESULT
 
@@ -293,7 +312,7 @@ I wish my kids could be as good looking as you! See there&#39;s this one Marvin 
 -You are style
 
 3a FAIL:
-Ummm... Yikes. That was quite the spectacle. Hey at least your outside is cleaned. And you could definetly be called hot... Just by a thermometer rather than by a person. Y&#39;know I wouldn&#39;t blame ya if you want to go back to bed. Is something I would say if you didn&#39;t have to go to work dipstick. Get moving! 
+Ummm... Yikes. That was quite the spectacle. Hey at least your outside is cleaned. And you could definetly be described as hot... Just by a thermometer rather than a person. Y&#39;know I wouldn&#39;t blame ya if you want to go back to bed. Is something I would say if you didn&#39;t have to go to work dipshit. Get moving! 
 
 -You are burn
 
@@ -308,14 +327,22 @@ Well, y&#39;know at least you&#39;re still alive. But should that bandage really
 -You are blood
 
 3c SUCCESS
+That was impressive. You definetly proved me wrong, despite your setbacks. Maybe this is a lesson in second chances? Nope, I don&#39;t see it. Now proceed with breakfast so you can actually head out, or if you wish to dissapoint me, the bed is still an option. A very bad option which you should not even consider.
+
+-You are relief
 
 3c FAIL
+Hey! Wake up! You hit your head pretty bad there. But you made your choice. See what happens when you stay in bed!? Now go! You still have stuff to do. Let this be a lesson for you. I am right and you are wrong. Listen to the voices in your head.
+
+-You are wrong
 
 3d CHOICE
+So you&#39;re gonna be that way huh? Sleeping through the day like a little baby. Is that what you are? A little baby? Well //little baby// has got to head for work in an hour, so //little baby// should grow up and get a grip!
 
+-You are //little baby//
 
-[[$wkUp|5a]] &lt;!--Mr. Freeman--&gt;
-[[$contSlp|5b]]</tw-passagedata><tw-passagedata pid="48" name="5b" tags="" position="2100,900" size="100,100">You sleep
+[[$wkUp|5a]] &lt;!--Mr. Freeman--&gt; SHOULD BE CALLED &quot;PROCEED WITH MORNING ACTIVITIES&quot;
+[[$contSlp|5b]] SHOULD BE CALLED &quot;HEAD FOR THE WARM COMFORT OF YOUR BED&quot;</tw-passagedata><tw-passagedata pid="48" name="5b" tags="" position="2100,900" size="100,100">Once more you tuck into the warm comfort of the bed. Defiance has never felt this good! You dream about being the boss of a company. You could sleep everyday and have others do your work. Imagine how real that prospect could&#39;ve been if you didn&#39;t choose this option.
 (set: $timesSlept to it +1)
 [[$cont|6]]</tw-passagedata><tw-passagedata pid="49" name="5a" tags="" position="1900,900" size="100,100">SKILL CHECK
 
@@ -368,20 +395,31 @@ The voice is struggling to speak. Is it sniveling?
 
 I&#39;m so proud of what you achieved. Being a human is difficult but you aced it! The jury is still out on if you&#39;ll make it though! What will you do?
 
+-You are impress
+
 3a SUCCESS WITH 3b FAIL
-Welp, you can&#39;t blame you for trying. You look good at the very least, despite that injury of course. Is it still hurting? Ah no matter obsessing over the past. You should get a move on, towards the front door nontheless.
+Welp, you can&#39;t blame you for trying. You look good at the very least, despite that injury of course. Does it still hurt? Ah no matter obsessing over the past. You should get a move on, towards the front door nontheless.
+
+-You are trying
 
 3a FAIL WITH 3b SUCCESS
 Welp, you can&#39;t blame you for trying. You&#39;re at least feeling ready, I hope. You&#39;re appearance could use some work but you know what they say: &quot;Rome wasn&#39;t built in a day but how long did it take to fall down?&quot; um... Scrap that last part. Enough dilly dallying you have a job to get to!
 
+-You are trying
+
 3a FAIL WITH 3b FAIL
 
-WIP MONOLOGUE
+You really tried. How commendable. Let&#39;s face it though, the cards were stacked against ya  pal. Don&#39;t feel bad for yourself. We all knew this was going to happen. Now I am going to leave it all up to you. Will you head out like //that// or will you sleep. No judgement here. I know what I would&#39;ve done if I was in your situation. 
+
+-You are fucked
 
 5b SLEEP
 
-WIP MONOLOGUE
+My expectations for you were low but wow! You really chose to be a slob about it and sleep. Well slobs like you don&#39;t deserve the such a prestigious work such as (STATE WHICH JOB THE PLAYER CHOSE). What am I even doing here? You clearly have it all under control without me.
 
+The voice mocks you. You are still in your pajamas.
+
+-You are incompetence
 
 [[$wkUp|7a]] (SHOULD JUST BE CALLED HEAD OUT)
 [[$contSlp|7b]] (SHOULD BE CALLED SOMETHING LIKE &quot;NAH I WANNA GO BACK TO BED&quot;)</tw-passagedata><tw-passagedata pid="51" name="7a" tags="" position="1900,1250" size="100,100">Woah woah woah! Hold it cowboy. Let&#39;s just get another look before you go. You did hastily run through todays routines. Maybe it&#39;s worth seeing if you forgot something. Y&#39;know retrace your steps. Did something slip your mind?
@@ -389,36 +427,47 @@ WIP MONOLOGUE
 YES ONLY WORKS IF ALL SKILLCHECKS HAVE SUCCEEDED
 
 [[Yes|8a]]
-[[No|8b]]</tw-passagedata><tw-passagedata pid="52" name="7b" tags="" position="2100,1250" size="100,100">You sleep
+[[No|8b]]</tw-passagedata><tw-passagedata pid="52" name="7b" tags="" position="2100,1250" size="100,100">You are once more in the comfort of your bed. This time, dangerously close to work. You have one more shot if you wanna make it.
+
+The voice speaks up.
+&quot;I know I was harsh. But do the right thing here.&quot;
 (set: $timesSlept to it +1)
-[[$wkUp|8c]]
-[[$contSlp|8d]]</tw-passagedata><tw-passagedata pid="53" name="8a" tags="" position="1750,1400" size="100,100">The oven was on
+[[$wkUp|8c]] SHOULD BE CALLED &quot;DO A THING (TRY TO GET GOING)&quot;
+[[$contSlp|8d]] SHOULD BE CALLED &quot;DO A THING (STAY ASLEEP)&quot;</tw-passagedata><tw-passagedata pid="53" name="8a" tags="" position="1750,1400" size="100,100">IF SUCCESS
+You walk around your tiny apartment in hopes to notice that one missing piece which the voice eluded to. As you enter the kitchen you notice something immedietly. The oven is on! Phew, what a disaster that would&#39;ve been.
 
-[[9]]</tw-passagedata><tw-passagedata pid="54" name="8b" tags="" position="1900,1400" size="100,100">No I didn&#39;t
+IF FAIL
+You walk around your tiny apartment in hopes to notice that one missing piece which the voice eluded to. As you enter the kitchen, you notice that the only light source is coming from the oven. You press the light switch to get a better look at the room. Wonder why you left it so poorly lit. How ominous.
+[[9]]</tw-passagedata><tw-passagedata pid="54" name="8b" tags="" position="1900,1400" size="100,100">Welp! I will just have to take your word for it chief.
 
-[[9]]</tw-passagedata><tw-passagedata pid="55" name="8c" tags="" position="2100,1400" size="100,100">Super negative modifier skill check
+[[9]]</tw-passagedata><tw-passagedata pid="55" name="8c" tags="" position="2100,1400" size="100,100">SUPER NEGATIVE MODIFIER SKILL CHECK
 
-You can still make it
+IF SUCCESS
+WIP
 
-[[9]]</tw-passagedata><tw-passagedata pid="56" name="8d" tags="" position="2250,1400" size="100,100">You sleep
+
+IF FAIL
+WIP
+
+[[9]]</tw-passagedata><tw-passagedata pid="56" name="8d" tags="" position="2250,1400" size="100,100">You continue let the blanket envelop you as it takes you deeper into the abyss. This was one of the many choices you could have made. And as you sleep, a smile graces your lips. This is what you wanted, more than anything in the world.
 (set: $timesSlept to it +1)
-[[$cont|9]]</tw-passagedata><tw-passagedata pid="57" name="9" tags="" position="2000,1550" size="100,100">Time to head out
+[[$cont|9]]</tw-passagedata><tw-passagedata pid="57" name="9" tags="" position="2000,1600" size="100,100">Right! This is your moment! I&#39;m letting go here. You will now live with the consequences of your actions and nothing will stop that. Are you happy? Are you sad? In reality it doesn&#39;t matter because you will just have to wake up tomorrow and do it again. It&#39;s the repetition which makes you human. Y&#39;know that and your job, which you will loose if you don&#39;t leave right now.
 
 (if: $timesSlept &lt; 5)[(go-to:&quot;10a&quot;)]{
 (hidden:)[[Ending 2|10b]]
 (hidden:)[[Ending 3|10c]]
 (hidden:)[[Ending 4|10d]]
 (hidden:)[[Ending 5|10e]]}
-(if: $timesSlept &gt;= 5)[(go-to:&quot;10f&quot;)]</tw-passagedata><tw-passagedata pid="58" name="10a" tags="" position="1775,1750" size="100,100">Successful day
+(if: $timesSlept &gt;= 5)[(go-to:&quot;10f&quot;)]</tw-passagedata><tw-passagedata pid="58" name="10a" tags="" position="1800,1700" size="100,100">Successful day
 
 (Later it will have skillchecks)
-&lt;!---if player succeeds with all skill checks--&gt;</tw-passagedata><tw-passagedata pid="59" name="10b" tags="" position="1775,1850" size="100,100">If players missed at least one skill check</tw-passagedata><tw-passagedata pid="60" name="10c" tags="" position="1775,1950" size="100,100">Not successful day
+&lt;!---if player succeeds with all skill checks--&gt;</tw-passagedata><tw-passagedata pid="59" name="10b" tags="" position="1800,1800" size="100,100">If players missed at least one skill check</tw-passagedata><tw-passagedata pid="60" name="10c" tags="" position="1800,1900" size="100,100">Not successful day
 
-If players failed multiple skill checks</tw-passagedata><tw-passagedata pid="61" name="10d" tags="" position="2150,1850" size="100,100">successful sleep
+If players failed multiple skill checks</tw-passagedata><tw-passagedata pid="61" name="10d" tags="" position="2200,1800" size="100,100">successful sleep
 
-if players slept once and got up </tw-passagedata><tw-passagedata pid="62" name="10e" tags="" position="2150,1950" size="100,100">Partial sleep
+if players slept once and got up </tw-passagedata><tw-passagedata pid="62" name="10e" tags="" position="2200,1900" size="100,100">Partial sleep
 
-if players slept a couple of times and got up</tw-passagedata><tw-passagedata pid="63" name="10f" tags="" position="2150,1750" size="100,100">Full sleep
+if players slept a couple of times and got up</tw-passagedata><tw-passagedata pid="63" name="10f" tags="" position="2200,1700" size="100,100">Full sleep
 
 You slept through the day
 
